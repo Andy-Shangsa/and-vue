@@ -1,11 +1,7 @@
 <template>
   <div>
-    {{input}}
+    <and-button>测试</and-button>
     <and-button></and-button>
-    <!-- <el-input
-      v-model="input"
-      placeholder="请输入内容"
-    ></el-input> -->
   </div>
 </template>
 

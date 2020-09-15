@@ -1,18 +1,14 @@
 <!-- 按钮 -->
-<template>
-  <div class='and-button'>
-    button
-  </div>
-</template>
-
 <script>
+import { h } from "vue";
 export default {
   name: "AndButton",
-  data() {
-    return {};
-  },
-  methods: {}
+  setup(props, ctx) {
+    return () => {
+      return h("button", { class: "and-button" }, [
+        ctx.slots.default ? h("span", ctx.slots.default()) : null
+      ]);
+    };
+  }
 };
 </script>
-<style lang='scss' scoped>
-</style>

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import "../mixins/mixins";
+@import "../common/const.scss";
+
+@include b(button) {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--color-white;
+  border: $--border-base;
+  border-color: $--border-color-base;
+  color: $--color-text-regular;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: $--font-weight-primary;
+}
