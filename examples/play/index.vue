@@ -1,8 +1,52 @@
 <template>
   <div>
     <div class="row">
-      <and-button type="primary">primary</and-button>
-      <and-button type="success">success</and-button>
+      <and-button
+        type="primary"
+        text
+        icon="and-icon and-icon-edit"
+      >primary</and-button>
+      <and-button
+        type="success"
+        text
+      >success</and-button>
+      <and-button
+        type="warning"
+        text
+      >warning</and-button>
+      <and-button
+        type="danger"
+        text
+      >danger</and-button>
+      <and-button text>default</and-button>
+      <and-button
+        type="primary"
+        text
+        plain
+      >primary</and-button>
+      <and-button
+        type="success"
+        text
+        plain
+      >success</and-button>
+      <and-button
+        type="warning"
+        text
+        plain
+      >warning</and-button>
+      <and-button
+        type="danger"
+        text
+        plain
+      >danger</and-button>
+      <and-button
+        text
+        plain
+      >default</and-button>
+    </div>
+    <div class="row">
+      <and-button icon="and-icon and-icon-edit" type="primary" loading>主要按钮</and-button>
+      <and-button type="success" loading>success</and-button>
       <and-button type="warning">warning</and-button>
       <and-button type="danger">danger</and-button>
       <and-button>default</and-button>
@@ -110,31 +154,6 @@
         type="warning"
         size="mini"
         shape="round"
-      >warning</and-button>
-    </div>
-
-    <div class="row">
-      <and-button
-        type="danger"
-        text
-      >danger</and-button>
-      <and-button
-        type="primary"
-        size="medium"
-        plain
-        text
-      >primary</and-button>
-      <and-button
-        type="success"
-        size="small"
-        shape="round"
-        text
-      >success</and-button>
-      <and-button
-        type="warning"
-        size="mini"
-        text
-        disabled
       >warning</and-button>
     </div>
   </div>

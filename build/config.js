@@ -1,9 +1,12 @@
+/**
+ * @description 编译配置 【config部分配置借鉴了Element UI】
+ */
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const Components = require("../components.json");
 const resolvePath = dir => path.resolve(__dirname, "../", dir);
 exports.resolvePath = resolvePath;
-
+// 配置别名
 exports.alias = {
   "and-vue": resolvePath("./"),
   "@main": resolvePath("./src"),
@@ -25,7 +28,7 @@ exports.vue = {
 };
 
 exports.jsexclude = /node_modules|utils\/popper\.js|utils\/date\.js/;
-//「从输出的 bundle 中排除依赖」
+// 从输出的 bundle 中排除依赖
 let externals = {};
 Object.keys(Components).forEach(function(key) {
   externals[`and-vue/src/packages/${key}`] = `and-vue/lib/${key}`;

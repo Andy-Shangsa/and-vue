@@ -1,9 +1,9 @@
 {
   "name": "and-vue",
   "author": "andy-shang",
-  "version": "0.20.09.15",
+  "version": "0.20.9.17",
   "description": "A Component Library for Vue3",
-  "main": "lib/element-ui.common.js",
+  "main": "lib/and-vue.common.js",
   "scripts": {
     "bootstrap": "npm i",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.play.js",

@@ -106,6 +106,32 @@ $--button-active-shade-percent: 10% !default;
     );
     color: $color;
   }
+  &.is-text {
+    color: $background-color;
+    border-color: transparent;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    &:hover,
+    &:focus {
+      color: mix(
+        $--color-white,
+        $background-color,
+        $--button-hover-tint-percent
+      );
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: mix(
+        $--color-black,
+        $background-color,
+        $--button-active-shade-percent
+      );
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
 
   &.is-disabled {
     &,
@@ -157,6 +183,33 @@ $--button-active-shade-percent: 10% !default;
       $--color-primary,
       $--button-active-shade-percent
     );
+  }
+
+  &.is-text {
+    color: $--color-info;
+    border-color: transparent;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    &:hover,
+    &:focus {
+      color: mix(
+        $--color-white,
+        $--color-primary,
+        $--button-hover-tint-percent
+      );
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: mix(
+        $--color-black,
+        $--color-primary,
+        $--button-active-shade-percent
+      );
+      border-color: transparent;
+      background-color: transparent;
+    }
   }
 
   &.is-disabled {

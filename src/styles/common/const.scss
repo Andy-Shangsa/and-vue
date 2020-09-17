@@ -82,6 +82,8 @@ $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /* Typography
 -------------------------- */
+$--font-path: "fonts" !default;
+$--font-display: "auto" !default;
 $--font-size-base: 14px !default;
 $--font-weight-primary: 500 !default;
 $--font-weight-secondary: 100 !default;

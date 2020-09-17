@@ -1,5 +1,5 @@
 /**
- * 基础配置
+ * webpack 基础配置
  */
 const webpack = require("webpack");
 const path = require("path");

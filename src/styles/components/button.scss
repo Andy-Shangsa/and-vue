@@ -37,12 +37,35 @@
     border: 0;
   }
 
+  & [class*="and-icon-"] {
+    & + span {
+      margin-left: 7px;
+    }
+  }
+
   @include when(round) {
     border-radius: 20px;
   }
 
   @include when(block) {
     width: 100%;
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
   }
 
   @include m(default) {

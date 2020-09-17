@@ -1,0 +1,186 @@
+@import "../common/const.scss";
+
+@font-face {
+  font-family: "and-icons";
+  src: url("#{$--font-path}/and-icons.woff") format("woff"),
+    /* chrome, firefox */ url("#{$--font-path}/and-icons.ttf")
+      format("truetype"); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  font-weight: normal;
+  font-display: $--font-display;
+  font-style: normal;
+}
+
+[class^="and-icon-"],
+[class*=" and-icon-"] {
+  font-family: "and-icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.and-icon-loading:before {
+  content: "\e6da";
+}
+
+.and-icon-menu-toggle:before {
+  content: "\e843";
+}
+
+.and-icon-menu-expand:before {
+  content: "\e844";
+}
+
+.and-icon-compress:before {
+  content: "\e914";
+}
+
+.and-icon-expend:before {
+  content: "\e915";
+}
+
+.and-icon-edit:before {
+  content: "\e8ca";
+}
+
+.and-icon-minus-fill:before {
+  content: "\e601";
+}
+
+.and-icon-down-fill:before {
+  content: "\e602";
+}
+
+.and-icon-top-fill:before {
+  content: "\e603";
+}
+
+.and-icon-right-fill:before {
+  content: "\e604";
+}
+
+.and-icon-left-fill:before {
+  content: "\e605";
+}
+
+.and-icon-arrow-left:before {
+  content: "\e608";
+}
+
+.and-icon-arrow-right:before {
+  content: "\e609";
+}
+
+.and-icon-arrow-top:before {
+  content: "\e60a";
+}
+
+.and-icon-arrow-down:before {
+  content: "\e60b";
+}
+
+.and-icon-triangle-top:before {
+  content: "\e60d";
+}
+
+.and-icon-triangle-bottom:before {
+  content: "\e60e";
+}
+
+.and-icon-triangle-left:before {
+  content: "\e60f";
+}
+
+.and-icon-triangle-right:before {
+  content: "\e610";
+}
+
+.and-icon-close:before {
+  content: "\e615";
+}
+
+.and-icon-right:before {
+  content: "\e616";
+}
+
+.and-icon-menu:before {
+  content: "\e66d";
+}
+
+.and-icon-menu-top-right:before {
+  content: "\e60c";
+}
+
+.and-icon-system:before {
+  content: "\e625";
+}
+
+.and-icon-refresh-left:before {
+  content: "\e787";
+}
+
+.and-icon-refresh-right:before {
+  content: "\e788";
+}
+
+.and-icon-zoom-out:before {
+  content: "\e897";
+}
+
+.and-icon-zoom-in:before {
+  content: "\e898";
+}
+
+.and-icon-delete:before {
+  content: "\e636";
+}
+
+.and-icon-info:before {
+  content: "\e719";
+}
+
+.and-icon-success:before {
+  content: "\e8c3";
+}
+
+.and-icon-close-fill:before {
+  content: "\e8c6";
+}
+
+.and-icon-warning:before {
+  content: "\e8c8";
+}
+
+.and-icon-plus-fill:before {
+  content: "\e8c9";
+}
+
+.and-icon-help:before {
+  content: "\e782";
+}
+
+.and-icon-plus:before {
+  content: "\e7b0";
+}
+
+.and-icon-minus:before {
+  content: "\e7b1";
+}
+
+.and-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
