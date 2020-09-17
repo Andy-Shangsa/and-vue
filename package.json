@@ -6,7 +6,10 @@
   "main": "lib/element-ui.common.js",
   "scripts": {
     "bootstrap": "npm i",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.play.js"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.play.js",
+    "comp": "webpack --config build/webpack.comp.js",
+    "common": "webpack --config build/webpack.common.js",
+    "lib": "webpack --config build/webpack.lib.js"
   },
   "repository": {
     "type": "git",
@@ -64,6 +67,7 @@
     "progress-bar-webpack-plugin": "^2.1.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.2.1",
     "url-loader": "^4.1.0",
     "vue": "^3.0.0-rc.4",
     "vue-loader": "^16.0.0-beta.4",
@@ -71,6 +75,7 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4",
     "webpack-node-externals": "^1.7.2"
   }
 }

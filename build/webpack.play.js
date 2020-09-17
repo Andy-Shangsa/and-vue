@@ -1,14 +1,13 @@
 /**
- * 文档演示
+ * @description 编译演示
  */
-const path = require("path");
 const webpack = require("webpack");
+const { merge } = require("webpack-merge");
 const config = require("./config");
+const webpackBaseConfig = require("./webpack.base.js");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-const { VueLoaderPlugin } = require("vue-loader");
 
-const webpackConfig = {
+const webpackConfig = merge(webpackBaseConfig, {
   mode: "development",
   entry: config.resolvePath("./examples/play.js"),
   output: {
@@ -28,58 +27,8 @@ const webpackConfig = {
     publicPath: "/",
     hot: true,
   },
-  performance: {
-    hints: false,
-  },
   stats: {
     children: false,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(jsx?|babel|es6)$/,
-        include: process.cwd(),
-        exclude: config.jsexclude,
-        loader: "babel-loader",
-      },
-      {
-        test: /\.vue$/,
-        loader: "vue-loader",
-        options: {
-          compilerOptions: {
-            preserveWhitespace: false,
-          },
-        },
-      },
-      {
-        test: /\.(scss|css)$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      // {
-      //   test: /\.md$/,
-      //   use: [
-      //     {
-      //       loader: "vue-loader",
-      //       options: {
-      //         compilerOptions: {
-      //           preserveWhitespace: false,
-      //         },
-      //       },
-      //     },
-      //     {
-      //       loader: path.resolve(__dirname, "./md-loader/index.js"),
-      //     },
-      //   ],
-      // },
-      {
-        test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-        loader: "url-loader",
-        query: {
-          limit: 10000,
-          name: path.posix.join("static", "[name].[hash:7].[ext]"),
-        },
-      },
-    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -87,8 +36,6 @@ const webpackConfig = {
       template: "./examples/index.html",
       filename: "./index.html",
     }),
-    new ProgressBarPlugin(),
-    new VueLoaderPlugin(),
     new webpack.LoaderOptionsPlugin({
       vue: {
         compilerOptions: {
@@ -101,6 +48,6 @@ const webpackConfig = {
     minimizer: [],
   },
   devtool: "#eval-source-map",
-};
+});
 
 module.exports = webpackConfig;

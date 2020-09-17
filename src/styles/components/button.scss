@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @import "../mixins/mixins";
 @import "../common/const.scss";
+@import "../mixins/libs.scss";
+@import "../mixins/_button.scss";
 
 @include b(button) {
   display: inline-block;
@@ -15,7 +17,78 @@
   text-align: center;
   box-sizing: border-box;
   outline: none;
+  touch-action: manipulation;
   margin: 0;
-  transition: 0.1s;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   font-weight: $--font-weight-primary;
+  @include utils-user-select(none);
+  @include button-size(
+    $--button-padding-vertical,
+    $--button-padding-horizontal,
+    $--font-size-base,
+    $--border-radius-base
+  );
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  @include when(round) {
+    border-radius: 20px;
+  }
+
+  @include when(block) {
+    width: 100%;
+  }
+
+  @include m(default) {
+    @include button-default();
+  }
+
+  @include m(primary) {
+    @include button-variant($--color-white, $--color-primary, $--color-primary);
+  }
+
+  @include m(success) {
+    @include button-variant($--color-white, $--color-success, $--color-success);
+  }
+
+  @include m(warning) {
+    @include button-variant($--color-white, $--color-warning, $--color-warning);
+  }
+
+  @include m(danger) {
+    @include button-variant($--color-white, $--color-danger, $--color-danger);
+  }
+
+  @include m(medium) {
+    @include button-size(
+      $--button-medium-padding-vertical,
+      $--button-medium-padding-horizontal,
+      $--font-size-base,
+      $--border-radius-base
+    );
+  }
+
+  @include m(small) {
+    @include button-size(
+      $--button-small-padding-vertical,
+      $--button-small-padding-horizontal,
+      $--button-small-font-size,
+      $--button-small-border-radius
+    );
+  }
+
+  @include m(mini) {
+    @include button-size(
+      $--button-mini-padding-vertical,
+      $--button-mini-padding-horizontal,
+      $--button-small-font-size,
+      $--button-small-border-radius
+    );
+  }
 }
