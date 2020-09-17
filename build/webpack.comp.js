@@ -14,18 +14,18 @@ const webpackConfig = merge(webpackBaseConfig, {
     publicPath: "/dist/",
     filename: "[name].js",
     chunkFilename: "[id].js",
-    libraryTarget: "commonjs2",
+    libraryTarget: "commonjs2"
   },
   resolve: {
     extensions: [".js", ".vue", ".json"],
     alias: config.alias,
-    modules: ["node_modules"],
+    modules: ["node_modules"]
   },
   externals: config.externals,
   stats: "none",
   optimization: {
-    minimize: false,
-  },
+    minimize: false
+  }
 });
 
 module.exports = webpackConfig;

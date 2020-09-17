@@ -6,6 +6,7 @@
   "main": "lib/and-vue.common.js",
   "scripts": {
     "bootstrap": "npm i",
+    "lint": "eslint example/**/* src/**/* build/**/* --quiet --fix",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.play.js",
     "comp": "webpack --config build/webpack.comp.js",
     "common": "webpack --config build/webpack.common.js",
@@ -26,6 +27,14 @@
   ],
   "license": "MIT",
   "private": false,
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint"
+    ]
+  },
   "dependencies": {
     "async-validator": "~1.8.1",
     "resize-observer-polyfill": "^1.5.0",
@@ -53,7 +62,7 @@
     "babel-regenerator-runtime": "^6.5.0",
     "cross-env": "^3.1.3",
     "css-loader": "^4.3.0",
-    "eslint": "4.18.2",
+    "eslint": "^4.18.2",
     "eslint-config-elemefe": "0.1.1",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-html": "^4.0.1",

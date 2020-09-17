@@ -14,40 +14,40 @@ const webpackConfig = merge(webpackBaseConfig, {
     path: config.resolvePath("./examples/and-vue/"),
     publicPath: process.env.CI_ENV || "",
     filename: "[name].[hash:7].js",
-    chunkFilename: "[name].js",
+    chunkFilename: "[name].js"
   },
   resolve: {
     extensions: [".js", ".vue", ".json"],
     alias: config.alias,
-    modules: ["node_modules"],
+    modules: ["node_modules"]
   },
   devServer: {
     host: "0.0.0.0",
     port: 8088,
     publicPath: "/",
-    hot: true,
+    hot: true
   },
   stats: {
-    children: false,
+    children: false
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: "./examples/index.html",
-      filename: "./index.html",
+      filename: "./index.html"
     }),
     new webpack.LoaderOptionsPlugin({
       vue: {
         compilerOptions: {
-          preserveWhitespace: false,
-        },
-      },
-    }),
+          preserveWhitespace: false
+        }
+      }
+    })
   ],
   optimization: {
-    minimizer: [],
+    minimizer: []
   },
-  devtool: "#eval-source-map",
+  devtool: "#eval-source-map"
 });
 
 module.exports = webpackConfig;

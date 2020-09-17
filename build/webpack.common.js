@@ -8,7 +8,7 @@ const config = require("./config");
 module.exports = merge(webpackBaseConfig, {
   mode: "production",
   entry: {
-    app: ["./src/index.js"],
+    app: ["./src/index.js"]
   },
   output: {
     path: config.resolvePath("./lib"),
@@ -17,18 +17,18 @@ module.exports = merge(webpackBaseConfig, {
     chunkFilename: "[id].js",
     libraryExport: "default",
     library: "AND",
-    libraryTarget: "commonjs2",
+    libraryTarget: "commonjs2"
   },
   resolve: {
     extensions: [".js", ".vue", ".json"],
     alias: config.alias,
-    modules: ["node_modules"],
+    modules: ["node_modules"]
   },
   externals: config.externals,
   stats: {
-    children: false,
+    children: false
   },
   optimization: {
-    minimize: false,
-  },
+    minimize: false
+  }
 });

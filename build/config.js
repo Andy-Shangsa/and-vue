@@ -17,14 +17,14 @@ exports.alias = {
   "@locale": resolvePath("./src/locale"),
   "@transitions": resolvePath("./src/transitions"),
   "@directives": resolvePath("./src/directives"),
-  "@examples": resolvePath("./examples"),
+  "@examples": resolvePath("./examples")
 };
 
 exports.vue = {
   root: "Vue",
   commonjs: "vue",
   commonjs2: "vue",
-  amd: "vue",
+  amd: "vue"
 };
 
 exports.jsexclude = /node_modules|utils\/popper\.js|utils\/date\.js/;
@@ -36,11 +36,11 @@ Object.keys(Components).forEach(function(key) {
 externals = [
   Object.assign(
     {
-      vue: "vue",
+      vue: "vue"
     },
     externals
   ),
-  nodeExternals(),
+  nodeExternals()
 ];
 
 exports.externals = externals;
